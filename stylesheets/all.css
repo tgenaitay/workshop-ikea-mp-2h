@@ -9683,20 +9683,21 @@ button.close {
     padding: 20px;
     box-shadow: 1px 1px 3px #F0F0F0;
     position: relative;
-    margin: 50px 0; }
-  /* line 11, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+    margin: 50px 0;
+    border-radius: 3px; }
+  /* line 12, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme .download {
     position: absolute;
     right: 20px;
     bottom: 20px; }
-  /* line 17, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 18, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme .features img {
     width: 100px; }
-  /* line 21, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 22, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme pre {
     margin-top: 30px !important;
     margin-bottom: 30px !important; }
-  /* line 28, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 29, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme h1.readme-header, .readme h2.readme-header, .readme h3.readme-header {
     color: #7D7979;
     font-weight: bold;
@@ -9707,18 +9708,18 @@ button.close {
     line-height: 45px;
     text-align: center;
     color: white;
-    border-radius: 10px;
+    border-radius: 3px;
     margin-bottom: 20px; }
-  /* line 41, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 42, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme h1.readme-header {
     font-size: 17px; }
-  /* line 44, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 45, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme h2.readme-header {
     font-size: 25px; }
-  /* line 47, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 48, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme h3.readme-header {
     font-size: 25px; }
-  /* line 50, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 51, /Users/thibaultgenaitay/code/tgenaitay/workshop-wechat-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme li {
     font-size: 18px;
     line-height: 30px;
