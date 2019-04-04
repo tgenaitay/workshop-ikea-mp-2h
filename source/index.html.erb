@@ -1,0 +1,344 @@
+---
+title: Le Wagon WeChat development workshop
+---
+
+<div class="banner" style="background-image:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5) 70%), url('images/background.jpg');">
+  <div class="banner-content slideUp">
+    <h1>Crack the code!</h1>
+    <h2>A crash course by Le Wagon x IKEA</h2>
+    <p class="tossing"><img src="images/QRCodeLeWagon.gif" width="150" height="150" /></p>
+  </div>
+</div>
+
+<div class="container-fluid readme">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <section class="readme-section">
+        <h2 class="readme-header">What's the plan?</h2>
+
+        <p><strong>Morning</strong></p>
+        <ul>
+          <li>9AM: welcome!</li>
+          <li>9:30AM: <em class="lecture">Lecture #1:</em> 小程序 101 (45min)</li>
+          <li>10:15AM: break</li>
+          <li>10:30AM: <em class="workshop">Workshop #1:</em> Build your first WeChat app with WXML/WXSS (90min)</li>
+          <li>12PM: lunch</li>
+        </ul>
+        <p><strong>Afternoon</strong></p>
+        <ul>
+          <li>1:30PM: Workshop continues (60min)</li>
+          <li>2:30PM: <em class="lecture">Lecture #2:</em> Javascript 101 (60min)</li>
+          <li>3:30PM: break</li>
+          <li>3:45PM: <em class="workshop">Workshop #2:</em> Create IKEA’s store locator in WeChat (60min)</li>
+          <li>5PM: Product development Q&A, wrap up</li>
+          <li>6PM: End of the day!</li>
+        </ul>
+
+      </section>
+
+      <section class="readme-section">
+        <h2 class="readme-header">What's the take away?</h2>
+
+        <p class="text-center"><strong>Today we'll make your first WeChat 小程序: a store locator!</strong></p>
+        <p class="text-center">
+        <video width="300" height="534" controls>
+          <source src="images/IKEAstores.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </p>
+        </section>
+
+        <section>
+          <h1 class="workshop text-center">Workshop #1</h1>
+        </section>
+
+        <section class="readme-section">
+          <h2 class="readme-header">1. Let's set up 🛠</h2>
+          <ol>
+            <li>Open and bookmark the <a href="https://mp.weixin.qq.com/">WeChat Official Accounts Platform</a>. We will refer to its <a href="https://developers.weixin.qq.com/miniprogram/dev/index.html">[Mini Programs Developers Docs]</a> very often.</li>
+            <li>Download and install the <strong>Integrated Development Environment</strong> (IDE) for WeChat: <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">Select "Stable build" and choose Windows 64 or Mac.</a> If you are using Linux, check this <a href="https://github.com/cytle/wechat_web_devtools">open source hack</a>.</a></li>
+            <li>Open WeChat's IDE to setup your first project
+              <ul>
+                <li>Turn off any VPN. On the home screen, scan the QR code with your personal WeChat. You should read "Scan succesfully". On your mobile, authorize the login. You're in!</li>
+                <li>Choose <strong>"Mini Program"</strong> from the left menu</li>
+                <li>Click the <strong>+ button</strong> to add a new project in your list
+                  <ol>
+                    <li>Insert a project name (don't worry, it won't show to users). Example: KungfuPanda app</li>
+                    <li>Select a directory where the Mini Program code will be stored on your computer. (Suggestion: make a new folder on your <strong>Desktop</strong>)</li>
+                    <li>In the AppID field, you're supposed to input your registered AppID. Don't worry, you can use a "Test account" instead. WeChat will add a random AppID</li>
+                    <li>Make sure Dev Mode has selected "Mini Program" and the Language is "Javascript"</li>
+                  </ol>
+                </li>
+              </ul>
+            </li>
+          </ol>
+
+          <p class="text-center">
+            <img src='images/project-setup.png' class="full-width" />
+          </p>
+
+        </section>
+
+        <section class="readme-section">
+          <h2 class="readme-header">2. Add some content with WXML markup 🏗</h2>
+          <ul>
+            <li>
+              To save time, just right-click the following image and save it <strong>inside your WeChat Mini Program code directory</strong> (put this file inside a new "img" folder)
+              <ul class="list-inline features">
+                <li><img src="images/kungfupanda.jpg" alt=""></li>
+              </ul>
+            </li>
+            <li>Then start writing some WXML code in <code>index.wxml</code>. We want:
+
+              <ol>
+                <li>One <code>image</code> tag</li>
+                <li>Two <code>text</code> tags</li>
+                <li>One <code>button</code> tag</li>
+              </ol>
+
+            </li>
+            <li>Have a little doubt here? no worries, always refer to the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/index.html?t=18090718">Official Documentation!</a></li>
+            <li>Your code will look like this:</li>
+          </ul>
+
+          <% code("html") do %>
+
+          <image src="/image/kungfupanda.jpg"/>
+          <text>Get new superpowers</text>
+          <text>Learn to code!</text>
+          <button type="default">Start today</button>
+
+          <% end %>
+          <h3>Tips</h3>
+          <ul>
+            <li>Use the built-in <strong>auto complete</strong> function to make sure you don't forget any <strong>end tags</strong>.</li>
+            <li>Your image <code>src</code> allows to load the file from the current page (index.wxml), you want to start with a slash <code>/</code> to write an absolute path</li>
+            <li>Don't forget to place your images inside a folder, e.g <code>/image</code></li>
+            <li>the <code>text</code> tag is "inline", i.e each tag will be side by side. If you want to break on two or multiple lines, consider using <code>view</code> tags instead</li>
+          </ul>
+
+          <hr>
+
+          <p>You probably noticed that your <code>text</code> tags aren't returning content to the next line 😔. No worries! Use the <code>view</code> tag to wrap around your content.</p>
+
+          <% code("html") do %>
+
+          <image src="/image/kungfupanda.jpg"/>
+          <view>
+            <text>Get new superpowers</text>
+          </view>
+          <view>
+            <text>Learn to code!</text>
+          </view>
+          <button type="default">Start today</button>
+
+          <% end %>
+
+        </section>
+
+
+        <section class="readme-section">
+          <h2 class="readme-header">3. Use WXSS for fonts & colors 🎨</h2>
+          <ul>
+            <li>First, please transform your image tag into a background image, using a <code>view</code> with a CSS class <code>banner</code></li>
+            <li>Second, add more CSS classes for your titles such as <code>headline</code> and <code>action</code>.</li>
+            Your code should look like this:
+          </ul>
+
+          <% code("html") do %>
+          <view class="banner">
+            <view class="headline">Get new superpowers</view>
+            <view class="action">Learn to code!</view>
+            <button type="default">Start today</button>
+          </view>
+          <% end %>
+
+
+          <p>You can copy/paste the CSS code below in <code>index.wxss</code> and <strong>customize it</strong></p>
+
+          <% code("css") do %>
+  .banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* "vh" is a special unit to calculate the viewport height (screen size) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* "Flexbox" is a CSS positioning method to align all items, here in a column. Look it up! */
+  background-image: url('https://www.ikea.com/ext/ikeagateway/statics/gw201904_tablet_portrait.jpg');
+  /* We're loading this image from your site!! */
+  background-position: center -30px;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  padding:30px;
+  }
+
+  .headline {
+  margin-top: 100px;
+  font-size: 40px;
+  padding:0px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .action {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+  margin: 30px;
+  }
+    <% end %>
+  </section>
+
+  <section class="readme-section">
+    <h2 class="readme-header">4. Make it great! 🤘</h2>
+    <ul>
+      <li>It's only 1 page... you must make it perfect!</li>
+      <li>Want to <strong>add new pages</strong> in this app? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html">Read here</a> about the <code>app.json</code> file, used to globally configure your WeChat Mini Program. That's where you can add new pages.</li>
+      <li>Next, how about using your button to navigate to a subpage? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/navigator.html">Look into this documentation</a> to add a component named <code>navigator</code></li>
+    </ul>
+  </section>
+  <section>
+    <h1 class="workshop text-center">Workshop #2</h1>
+  </section>
+  <section class="readme-section">
+
+    <h2 class="readme-header drop">Let's build a store locator!</h2>
+
+    In this challenge, you will build the 2nd page of your Wechat program Store Locator, using advanced WXML capabilities and some built-in APIs.
+
+    <h3>Start with the view:</h3>
+    <ul>
+      <li><strong>App.json file:</strong> inject a new page named "map" inside your "pages" array.</li>
+      <% code("javascript") do %>
+      "pages":[
+      "pages/index/index",
+      "pages/map/map"
+      ],
+      <% end %>
+      <li><strong>WXML:</strong> Add following elements:
+        <ol>
+          <li>A title for your page... styled like an H2!</li>
+          <li>A map component 👉 (<a href="http://open.wechat.com/cgi-bin/newreadtemplate?t=overseas_open/docs/mini-programs/development/component/map#component_map">check the attributes list here</a>) with static latitude/longitude data.</li>
+        </ol>
+      </li>
+
+      <% code("html") do %>
+      <map longitude="121.47575499999994" latitude="31.232711" scale="10" style="width: 100%; height: 80vh;"></map>
+      <% end %>
+
+      <li><strong>WXSS:</strong> Arrange the style of your map, either through inline CSS (style='') on the map component, or directly in the <code>map.wxss</code> file.</li>
+
+    </ul>
+    <hr>
+    <h3>Continue with the JS logical layer:</h3>
+    <ul>
+      <li>Instead of static data, your map component should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustach syntax}}</a> to inject dynamic variables such as <em>{{longitude}}</em>, <em>{{lattitude}}</em>, <em></em>{{scale}}</em>, and of course <em>{{markers}}</em>!</li>
+      <li>Add now some raw data in your <code>data: {}</code> object (located <strong>at the top</strong> of your <code>map.js</code> file!)</li>
+      <li>Tip: use on <a href="https://www.latlong.net/convert-address-to-lat-long.html">online free service to calculate the GPS latitude/longitude</a> of any address.</li>
+
+      <% code("javascript") do %>
+      data: {
+      latitude: "31.232711",
+      longitude: "121.47575499999994",
+      scale: '10',
+      markers: []
+    }
+    <% end %>
+    <li>Add your first marker to the empty array! Here's an array with 1 marker only:</li>
+
+    <% code("javascript") do %>
+    markers: [{
+    iconPath: "/image/marker.png",
+    id: 0,
+    latitude: 31.232711,
+    longitude: 121.47575499999994,
+    width: 50,
+    height: 50
+  }]
+  <% end %>
+</li>
+<h3>Tips</h3>
+<ul>
+  <li>Make your own <a href="https://www.iconfont.cn/search/index?q=marker">marker icon</a>, add it to your project folder, and put the correct <code>iconPath</code></li>
+  <li>Use the <code>callout object</code> inside your marker object to create a tooltip. E.g:</li>
+
+  <% code("javascript") do %>
+  callout: { content: "Shanghai Xuhui Store\n No.126 Caoxi Road, Xuhui District, Shanghai", fontSize: 15, color: "#000000", padding: 10 }
+  <% end %>
+
+
+</ul>
+</ul>
+<hr>
+<h3>Last step: Let's fetch our data from an API call!</h3>
+<ol>
+  <li>Open this <a href="https://easy-mock.com/mock/5a641f8a0ea0400cac5a91df/tesla/stores">endpoint in your browser</a> to discover the data we prepared for you... 👉 Our objective is to GET these shop markers and load them dynamically in the WeChat mini program.</li>
+  <li>Locate the <strong>onLoad: function ()</strong> in your <code>map.js</code> file. Feel free to add some console.log('test') inside each part to test out the life cycle of your app...</li>
+  <li>Inside the body of this function, set a variable with your API endpoint.</li>
+  <% code("javascript") do %>
+  const endpoint = 'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores'
+  <% end %>
+  <li>Next we will need a pointer to the current page, in the form of a variable. Here you go:</li>
+  <% code("javascript") do %>
+  var page = this
+  <% end %>
+
+  <li>Last, we can create a HTTPs request thanks to the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request API</a></li>
+
+  <% code("javascript") do %>
+  wx.request({
+  url: endpoint,
+  header: { 'content-type': 'application/json' },
+  success: function (res) {
+  console.log('success!' + res.statusCode);
+  console.log(res)
+},
+fail: function (res) {
+
+},
+complete: function(res) {
+
+}
+})
+<% end %>
+<li>You should see data in your console log now! Reload your app to see the results logged. If not, call for help 🙌</li>
+<li>Final step: Update the local data! The <code>setData</code> function is used to send data from the logical layer to the view layer, while changing the corresponding page data values. Add this line <strong>inside your success function</strong>, right after the console.log(res) ....</li>
+<% code("javascript") do %>
+page.setData({ markers: res.data.stores })
+<% end %>
+<h3>Tips</h3>
+<ul>
+  <li>The markers provided in this API call will require your icon to be named <code>marker.png</code> and placed them inside an <code>/image</code> folder 😉</li>
+  <li>The markers provided will show up in Shanghai ;)</li>
+</ul>
+</ol>
+</section>
+
+<section class="readme-section">
+  <h2 class="readme-header">We need your feedbacks!</h2>
+  <ul>
+    <li>Our workshops are driven by your comments and suggestions. <br>Space, instructor, content, time... <strong>Please tell us what you think!</strong></li>
+    <p class="text-center"><img src="images/feedbacks.png" alt="" class="QR"></p>
+    <li>👆 If you'd like today's <strong>slides</strong>, please take 2 minutes to fill up this form! We'll send them over email. Win-win.</li>
+  </ul>
+</section>
+
+<section class="readme-section">
+  <h2 class="readme-header">Important links</h2>
+  <ul>
+    <li><a href="https://minapp.com/">Do your market research on Minapp.com</a></li>
+    <li><a href="https://www.wechatdevelopers.com/">Find and hire expert developers on WechatDevelopers.com</a>
+    </li>
+    <li><a href="https://pan.baidu.com/s/1kW7EvLP">Download the WeChat mini programs ecosystem in one map</a></li>
+    <li><a href="https://www.youtube.com/watch?v=2P28lSgNWTA&list=PLkbmdtbypn7TdIyxQzVccYO2-m-pXMK6g">🎁 Go further: watch this free crash course on Youtube (for Javascript beginners)</a></li>
+    <li><a href="https://www.lewagon.com/">Learn how to design and code an application from scratch with Le Wagon bootcamps in China</a></li>
+  </ul>
+</section>
+
+</div>
+</div>
+</div>

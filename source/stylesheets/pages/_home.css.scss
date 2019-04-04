@@ -1,0 +1,72 @@
+.full-width {
+  width:100%;
+}
+
+.readme {
+  font-size: 18px;
+  &-section {
+    background-color: #FAFAFA;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+    position: relative;
+    margin: 50px 0;
+    border-radius: 3px;
+  }
+
+  .download {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .features img {
+    width:100px;
+  }
+
+  pre {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+
+  // Headings
+
+  h1.readme-header, h2.readme-header, h3.readme-header {
+    color: #7D7979;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 10px 0;
+    background: #474747;
+    line-height: 45px;
+    text-align: center;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  h1.readme-header {
+    font-size: 17px;
+  }
+  h2.readme-header {
+    font-size: 25px;
+  }
+  h3.readme-header {
+    font-size: 25px;
+  }
+  li {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 5px 0;
+  }
+  .readme-header.drop {
+    cursor: pointer;
+  }
+}
+
+.lecture {
+  background-color: #E8FAFE;
+  color: #62DDF5;
+}
+
+.workshop {
+  background-color: #E4FFF3;
+  color: #1EDD88;
+}

@@ -1,0 +1,9 @@
+<view class="banner">
+
+  <view class="title">Hej! Locate a store.</view>
+
+  <view class="proposition">Your house is waiting for new furnitures!</view>
+
+  <button class="btn" bindtap="start">Locate a store</button>
+
+</view>
