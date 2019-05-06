@@ -30,7 +30,7 @@ title: Le Wagon WeChat development workshop
           <li>2:30PM: <em class="lecture">Lecture #2:</em> Javascript 101 (60min)</li>
           <li>3:30PM: break</li>
           <li>3:45PM: <em class="workshop">Workshop #2:</em> Create IKEA’s store locator in WeChat (60min)</li>
-          <li>5PM: Product development Q&A, wrap up</li>
+          <li>5PM: WeChat product development Q&A with Fran Yang</li>
           <li>6PM: End of the day!</li>
         </ul>
 
@@ -83,7 +83,7 @@ title: Le Wagon WeChat development workshop
           <h2 class="readme-header">2. Add some content with WXML markup 🏗</h2>
           <ul>
             <li>
-              To save time, just right-click the following image and save it <strong>inside your WeChat Mini Program code directory</strong> (put this file inside a new "img" folder)
+              To save time, just right-click the following image and save it <strong>inside your WeChat Mini Program code directory</strong> (put this file inside a new "images" folder)
               <ul class="list-inline features">
                 <li><img src="images/kungfupanda.jpg" alt=""></li>
               </ul>
@@ -98,41 +98,30 @@ title: Le Wagon WeChat development workshop
 
             </li>
             <li>Have a little doubt here? no worries, always refer to the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/index.html?t=18090718">Official Documentation!</a></li>
-            <li>Your code will look like this:</li>
-          </ul>
 
+          </ul>
+          <a class="btn-treehouse drop" data-toggle="collapse" data-target="#html" aria-expanded="false" aria-controls="html">⚠️ Click here to reveal the solution</a>
+
+          <div class="collapse" id="html">
           <% code("html") do %>
 
-          <image src="/image/kungfupanda.jpg"/>
+          <image src="/images/kungfupanda.jpg"/>
           <text>Get new superpowers</text>
           <text>Learn to code!</text>
           <button type="default">Start today</button>
 
           <% end %>
-          <h3>Tips</h3>
-          <ul>
-            <li>Use the built-in <strong>auto complete</strong> function to make sure you don't forget any <strong>end tags</strong>.</li>
-            <li>Your image <code>src</code> allows to load the file from the current page (index.wxml), you want to start with a slash <code>/</code> to write an absolute path</li>
-            <li>Don't forget to place your images inside a folder, e.g <code>/image</code></li>
-            <li>the <code>text</code> tag is "inline", i.e each tag will be side by side. If you want to break on two or multiple lines, consider using <code>view</code> tags instead</li>
-          </ul>
+          </div>
 
           <hr>
 
-          <p>You probably noticed that your <code>text</code> tags aren't returning content to the next line 😔. No worries! Use the <code>view</code> tag to wrap around your content.</p>
-
-          <% code("html") do %>
-
-          <image src="/image/kungfupanda.jpg"/>
-          <view>
-            <text>Get new superpowers</text>
-          </view>
-          <view>
-            <text>Learn to code!</text>
-          </view>
-          <button type="default">Start today</button>
-
-          <% end %>
+          <h3 class="">Tips</h3>
+          <ul>
+            <li>Use the built-in <strong>auto complete</strong> function to make sure you don't forget any <strong>end tags</strong>.</li>
+            <li>Your image <code>src</code> allows to load the file from the current page (index.wxml), you want to start with a slash <code>/</code> to write an absolute path</li>
+            <li>Don't forget to place your images inside a folder, e.g <code>/images</code></li>
+            <li>The <code>text</code> tag is "inline", i.e each tag will be side by side. If you want to break on two or multiple lines, consider using <code>view</code> tags instead</li>
+          </ul>
 
         </section>
 
@@ -142,9 +131,11 @@ title: Le Wagon WeChat development workshop
           <ul>
             <li>First, please transform your image tag into a background image, using a <code>view</code> with a CSS class <code>banner</code></li>
             <li>Second, add more CSS classes for your titles such as <code>headline</code> and <code>action</code>.</li>
-            Your code should look like this:
           </ul>
+          <p>
+          <a class="btn-treehouse drop" data-toggle="collapse" data-target="#classes" aria-expanded="false" aria-controls="classes">⚠️ Click here to reveal the solution</a></p>
 
+          <div class="collapse" id="classes">
           <% code("html") do %>
           <view class="banner">
             <view class="headline">Get new superpowers</view>
@@ -152,6 +143,8 @@ title: Le Wagon WeChat development workshop
             <button type="default">Start today</button>
           </view>
           <% end %>
+          </div>
+          <hr>
 
 
           <p>You can copy/paste the CSS code below in <code>index.wxss</code> and <strong>customize it</strong></p>
@@ -210,7 +203,7 @@ title: Le Wagon WeChat development workshop
 
     In this challenge, you will build the 2nd page of your Wechat program Store Locator, using advanced WXML capabilities and some built-in APIs.
 
-    <h3>Start with the view:</h3>
+    <h3>1. Start with the view:</h3>
     <ul>
       <li><strong>App.json file:</strong> inject a new page named "map" inside your "pages" array.</li>
       <% code("javascript") do %>
@@ -234,7 +227,7 @@ title: Le Wagon WeChat development workshop
 
     </ul>
     <hr>
-    <h3>Continue with the JS logical layer:</h3>
+    <h3>2. Continue with the JS logical layer:</h3>
     <ul>
       <li>Instead of static data, your map component should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustach syntax}}</a> to inject dynamic variables such as <em>{{longitude}}</em>, <em>{{lattitude}}</em>, <em></em>{{scale}}</em>, and of course <em>{{markers}}</em>!</li>
       <li>Add now some raw data in your <code>data: {}</code> object (located <strong>at the top</strong> of your <code>map.js</code> file!)</li>
@@ -252,7 +245,7 @@ title: Le Wagon WeChat development workshop
 
     <% code("javascript") do %>
     markers: [{
-    iconPath: "/image/marker.png",
+    iconPath: "/images/marker.png",
     id: 0,
     latitude: 31.232711,
     longitude: 121.47575499999994,
@@ -274,7 +267,7 @@ title: Le Wagon WeChat development workshop
 </ul>
 </ul>
 <hr>
-<h3>Last step: Let's fetch our data from an API call!</h3>
+<h3>3. Last step: Let's fetch our data from an API call!</h3>
 <ol>
   <li>Open this <a href="https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores">endpoint in your browser</a> to discover the data we prepared for you... 👉 Our objective is to GET these shop markers and load them dynamically in the WeChat mini program.</li>
   <li>Locate the <strong>onLoad: function ()</strong> in your <code>map.js</code> file. Feel free to add some console.log('test') inside each part to test out the life cycle of your app...</li>
@@ -312,7 +305,7 @@ page.setData({ markers: res.data.stores })
 <% end %>
 <h3>Tips</h3>
 <ul>
-  <li>The markers provided in this API call will require your icon to be named <code>marker.png</code> and placed them inside an <code>/image</code> folder 😉</li>
+  <li>The markers provided in this API call will require your icon to be named <code>marker.png</code> and placed them inside an <code>/images</code> folder 😉</li>
   <li>The markers provided will show up in Shanghai ;)</li>
 </ul>
 </ol>

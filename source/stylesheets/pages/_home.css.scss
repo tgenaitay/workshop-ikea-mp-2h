@@ -51,10 +51,16 @@
   h3.readme-header {
     font-size: 25px;
   }
+  ul {
+    margin-bottom:30px;
+  }
   li {
     font-size: 18px;
     line-height: 30px;
     margin: 5px 0;
+  }
+  hr {
+    margin-bottom:15px;
   }
   .readme-header.drop {
     cursor: pointer;
