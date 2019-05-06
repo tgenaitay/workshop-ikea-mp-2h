@@ -9742,20 +9742,26 @@ footer a {
   .readme h3.readme-header {
     font-size: 25px; }
   /* line 54, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
+  .readme ul {
+    margin-bottom: 30px; }
+  /* line 57, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme li {
     font-size: 18px;
     line-height: 30px;
     margin: 5px 0; }
-  /* line 59, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
+  /* line 62, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
+  .readme hr {
+    margin-bottom: 15px; }
+  /* line 65, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
   .readme .readme-header.drop {
     cursor: pointer; }
 
-/* line 64, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
+/* line 70, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
 .lecture {
   background-color: #E8FAFE;
   color: #62DDF5; }
 
-/* line 69, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
+/* line 75, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/pages/_home.css.scss */
 .workshop {
   background-color: #E4FFF3;
   color: #1EDD88; }
@@ -9801,13 +9807,14 @@ footer a {
 /* line 14, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/components/_button.scss */
 .btn-treehouse {
   color: white;
+  margin-bottom: 30px;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
   background: #6AD58B;
   transition: background 0.3s ease; }
 
-/* line 22, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/components/_button.scss */
+/* line 23, /Users/thibaultgenaitay/code/tgenaitay/workshop-ikea-mp-2h/source/stylesheets/components/_button.scss */
 .btn-treehouse:hover {
   opacity: 1;
   background: #3ac162;
