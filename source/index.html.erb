@@ -1,5 +1,5 @@
 ---
-title: Le Wagon WeChat development workshop
+title: Le Wagon | WeChat Mini Program development workshop
 ---
 
 <div class="banner" style="background-image:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5) 70%), url('images/background.jpg');">
@@ -215,7 +215,7 @@ title: Le Wagon WeChat development workshop
     <h3>2. Link To Map Page</h3>
 
 
-    <p> Next, how about using your button to navigate to the map? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/navigator.html">Look into this documentation</a> to add a component named <code>navigator</code> </p>
+    <p> Next, how about using your button to navigate to the map?</p>
 
     <p> <strong>index.wxml:</strong> add a tapping interaction to your button called "map": </p>
 
@@ -259,19 +259,17 @@ title: Le Wagon WeChat development workshop
     </ul>
     <hr>
     <h3>4. Continue with live data using code!</h3>
-    <ul>
+    <ol>
       <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to substitute live data such as <code>{{longitude}}</code>, <code>{{lattitude}}</code>, <code>{{scale}}</code>, and of course <code>{{markers}}</code>!</li>
-      <li>Now add some live data to <code>data: {}</code> (located <strong>at the top</strong> of your <strong>map.js</strong> file!)</li>
-    </ul>
-    Tip:
       <ul>
+        <li>Now add some live data to <code>data: {}</code> (located <strong>at the top</strong> of your <strong>map.js</strong> file!)</li>
         <li>
           Remember to match the label names of the mustache placeholders with that in the data: e.g. <code>{{ label1 }}</code> and <code>data: { label1: 134 }</code>
         </li>
+      </ul>
         <li>
           Use <a href="https://www.latlong.net/convert-address-to-lat-long.html"> online free service to calculate the GPS latitude/longitude</a> for a real address.
         </li>
-      </ul>
       <% code("javascript") do %>
       data: {
         latitude: "31.232711",
@@ -292,6 +290,7 @@ title: Le Wagon WeChat development workshop
         height: 50
       }]
     <% end %>
+      </ol>
 </li>
 <h3>5. Make it pretty!</h3>
 <ul>
@@ -341,13 +340,13 @@ title: Le Wagon WeChat development workshop
 <% code("javascript") do %>
 this.setData({ markers: res.data.stores })
 <% end %>
+</ol>
 <h3>You should now see stores on the map!! 💪🎉 </h3>
 If not, check:
 <ul>
   <li>The markers provided in this API call will require your icon to be named <code>marker.png</code> and placed them inside an <code>/images</code> folder 😉</li>
   <li>The markers provided will show up in Shanghai, so move the map there! ;)</li>
 </ul>
-</ol>
 </section>
 
 <section class="readme-section">
