@@ -158,48 +158,44 @@ title: Le Wagon WeChat development workshop
 
           <% code("css") do %>
   .banner {
-  color: white;
-  text-align: center;
-  height: 100vh;
-  /* "vh" is a special unit to calculate the viewport height (screen size) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* "Flexbox" is a CSS positioning method to align all items, here in a column. Look it up! */
-  background-image: url('https://www.ikea.com/ext/ikeagateway/statics/gw201904_tablet_portrait.jpg');
-  /* We're loading this image from your site!! */
-  background-position: center -30px;
-  background-repeat: no-repeat;
-  background-size: cover !important;
-  padding:30px;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    /* "vh" is a special unit to calculate the viewport height (screen size) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* "Flexbox" is a CSS positioning method to align all items, here in a column. Look it up! */
+    background-image: url('https://www.ikea.com/ext/ikeagateway/statics/gw201904_tablet_portrait.jpg');
+    /* We're loading this image from your site!! */
+    background-position: center -30px;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    padding:30px;
   }
 
   .headline {
-  margin-top: 100px;
-  font-size: 40px;
-  padding:0px;
-  font-weight: bold;
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+    margin-top: 100px;
+    font-size: 40px;
+    padding:0px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
   }
 
   .action {
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
-  margin: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+    margin: 30px;
   }
     <% end %>
   </section>
 
   <section class="readme-section">
     <h2 class="readme-header">4. Make it great! 🤘</h2>
-    <ul>
-      <li>It's only 1 page... you must make it perfect!</li>
-      <li>Want to <strong>add new pages</strong> in this app? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html">Read here</a> about the <code>app.json</code> file, used to globally configure your WeChat Mini Program. That's where you can add new pages.</li>
-      <li>Next, how about using your button to navigate to a subpage? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/navigator.html">Look into this documentation</a> to add a component named <code>navigator</code></li>
-    </ul>
+    It's your landing page... you must make a perfect first impression!
   </section>
   <section>
     <h1 class="workshop text-center">Workshop #2</h1>
@@ -208,18 +204,46 @@ title: Le Wagon WeChat development workshop
 
     <h2 class="readme-header drop">Let's build a store locator!</h2>
 
-    In this challenge, you will build the 2nd page of your Wechat program Store Locator, using advanced WXML capabilities and some built-in APIs.
+    <p> In this challenge, you will build the 2nd page of your Wechat program Store Locator, using advanced Wechat capabilities and <strong>API</strong>. </p>
 
-    <h3>Start with the view:</h3>
-    <ul>
-      <li><strong>App.json file:</strong> inject a new page named "map" inside your "pages" array.</li>
+    <p> <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html">Read here</a> about the <code>app.json</code> file, used to globally configure your WeChat Mini Program. That's where you can add new pages. </p>
+
+
+    <h3>Create Map Page</h3>
+    <strong>app.json:</strong> add a new page named "map" inside your "pages" list like so:
       <% code("javascript") do %>
-      "pages":[
-      "pages/index/index",
-      "pages/map/map"
-      ],
+        "pages":[
+          "pages/index/index",
+          "pages/map/map"
+        ],
       <% end %>
-      <li><strong>WXML:</strong> Add following elements:
+
+    <h3>Link To Map Page</h3>
+
+
+    <p> Next, how about using your button to navigate to the map? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/navigator.html">Look into this documentation</a> to add a component named <code>navigator</code> </p>
+
+    <p> <strong>index.wxml:</strong> add a tapping interaction to your button called "map": </p>
+
+      <% code("html") do %>
+        <button type="default" bindtap="map"> Start today </button>
+      <% end %>
+
+    <strong>index.js:</strong> navigate to the map page in the "map" interaction that you will add to this file:
+
+      <% code("javascript") do %>
+        map: function() {
+          wx.navigateTo({
+            url: '/pages/map/map'
+          })
+        }
+      <% end %>
+
+    <h3>Map</h3>
+    <ul>
+      Tip: Top page listed in app.json "pages" list is the landing page that is shown first! You can put map page above the index page to see it when you save and make coding faster.
+
+      <li><strong>WXML:</strong> Add following in the <code>map.wxml</code> file:</li>
         <ol>
           <li>A title for your page... styled like an H2!</li>
           <li>A map component 👉 (<a href="http://open.wechat.com/cgi-bin/newreadtemplate?t=overseas_open/docs/mini-programs/development/component/map#component_map">check the attributes list here</a>) with static latitude/longitude data.</li>
@@ -227,93 +251,107 @@ title: Le Wagon WeChat development workshop
       </li>
 
       <% code("html") do %>
-      <map longitude="121.47575499999994" latitude="31.232711" scale="10" style="width: 100%; height: 80vh;"></map>
+      <map longitude="121.47575499999994" latitude="31.232711" scale="10"></map>
       <% end %>
 
-      <li><strong>WXSS:</strong> Arrange the style of your map, either through inline CSS (style='') on the map component, or directly in the <code>map.wxss</code> file.</li>
+      <li><strong>WXSS:</strong> Style your map in the <code>map.wxss</code> file.</li>
+      <% code("css") do %>
+      map {
+        width: 100%;
+        height: 80vh;
+      }
+      <% end %>
 
     </ul>
     <hr>
-    <h3>Continue with the JS logical layer:</h3>
+    <h3>Continue with live data using code!</h3>
     <ul>
-      <li>Instead of static data, your map component should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustach syntax}}</a> to inject dynamic variables such as <em>{{longitude}}</em>, <em>{{lattitude}}</em>, <em></em>{{scale}}</em>, and of course <em>{{markers}}</em>!</li>
-      <li>Add now some raw data in your <code>data: {}</code> object (located <strong>at the top</strong> of your <code>map.js</code> file!)</li>
-      <li>Tip: use on <a href="https://www.latlong.net/convert-address-to-lat-long.html">online free service to calculate the GPS latitude/longitude</a> of any address.</li>
-
+      <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to substitute live data such as <code>{{longitude}}</code>, <code>{{lattitude}}</code>, <code>{{scale}}</code>, and of course <code>{{markers}}</code>!</li>
+      <li>Now add some live data to <code>data: {}</code> (located <strong>at the top</strong> of your <strong>map.js</strong> file!)</li>
+    </ul>
+    Tip:
+      <ul>
+        <li>
+          Remember to match the label names of the mustache placeholders with that in the data: e.g. <code>{{ label1 }}</code> and <code>data: { label1: 134 }</code>
+        </li>
+        <li>
+          Use <a href="https://www.latlong.net/convert-address-to-lat-long.html"> online free service to calculate the GPS latitude/longitude</a> for a real address.
+        </li>
+      </ul>
       <% code("javascript") do %>
       data: {
-      latitude: "31.232711",
-      longitude: "121.47575499999994",
-      scale: '10',
-      markers: []
-    }
-    <% end %>
-    <li>Add your first marker to the empty array! Here's an array with 1 marker only:</li>
+        latitude: "31.232711",
+        longitude: "121.47575499999994",
+        scale: '10',
+        markers: []
+      }
+      <% end %>
+    <li>Add your first marker to the "markers" list! Here's a list with 1 marker only:</li>
 
     <% code("javascript") do %>
-    markers: [{
-    iconPath: "/image/marker.png",
-    id: 0,
-    latitude: 31.232711,
-    longitude: 121.47575499999994,
-    width: 50,
-    height: 50
-  }]
-  <% end %>
+      markers: [{
+        iconPath: "/image/marker.png",
+        id: 0,
+        latitude: 31.232711,
+        longitude: 121.47575499999994,
+        width: 50,
+        height: 50
+      }]
+    <% end %>
 </li>
-<h3>Tips</h3>
+<h3>Make it pretty!</h3>
 <ul>
   <li>Make your own <a href="https://www.iconfont.cn/search/index?q=marker">marker icon</a>, add it to your project folder, and put the correct <code>iconPath</code></li>
-  <li>Use the <code>callout object</code> inside your marker object to create a tooltip. E.g:</li>
+  <li>Want a tooltip? Use the <code>callout</code> inside your marker:</li>
 
   <% code("javascript") do %>
-  callout: { content: "Shanghai Xuhui Store\n No.126 Caoxi Road, Xuhui District, Shanghai", fontSize: 15, color: "#000000", padding: 10 }
+      markers: [{
+        iconPath: "/image/marker.png",
+        id: 0,
+        latitude: 31.232711,
+        longitude: 121.47575499999994,
+        width: 50,
+        height: 50,
+        callout: {
+          content: "Shanghai Xuhui Store\n No.126 Caoxi Road, Xuhui District, Shanghai",
+          fontSize: 15,
+          color: "#000000",
+          padding: 10
+        }
+      }]
   <% end %>
 
 
 </ul>
-</ul>
+
 <hr>
-<h3>Last step: Let's fetch our data from an API call!</h3>
+<h3>Almost there! Let's fetch our data from the API!</h3>
 <ol>
   <li>Open this <a href="https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores">endpoint in your browser</a> to discover the data we prepared for you... 👉 Our objective is to GET these shop markers and load them dynamically in the WeChat mini program.</li>
-  <li>Locate the <strong>onLoad: function ()</strong> in your <code>map.js</code> file. Feel free to add some console.log('test') inside each part to test out the life cycle of your app...</li>
-  <li>Inside the body of this function, set a variable with your API endpoint.</li>
-  <% code("javascript") do %>
-  const endpoint = 'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores'
-  <% end %>
-  <li>Next we will need a pointer to the current page, in the form of a variable. Here you go:</li>
-  <% code("javascript") do %>
-  var page = this
-  <% end %>
+  <li>Locate the <code>onLoad: function ()</code> in your <strong>map.js</strong> file. This code will run automatically when your page is loaded!</li>
 
-  <li>Last, we can create a HTTPs request thanks to the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request API</a></li>
+  <li>Inside the function, we can request data from APIs thanks to <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request</a></li>
 
   <% code("javascript") do %>
   wx.request({
-  url: endpoint,
-  header: { 'content-type': 'application/json' },
-  success: function (res) {
-  console.log('success!' + res.statusCode);
-  console.log(res)
-},
-fail: function (res) {
-
-},
-complete: function(res) {
-
-}
-})
+    url: 'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores',
+    header: { 'content-type': 'application/json' },
+    success: function (res) {
+      console.log('success!');
+      console.log(res.data)
+    }
+  })
 <% end %>
-<li>You should see data in your console log now! Reload your app to see the results logged. If not, call for help 🙌</li>
-<li>Final step: Update the local data! The <code>setData</code> function is used to send data from the logical layer to the view layer, while changing the corresponding page data values. Add this line <strong>inside your success function</strong>, right after the console.log(res) ....</li>
+<li>You should see data logged to your console now! Reload your app to see a list of stores. If not, call for help 🙌</li>
+<li>Final step: Use the API data! Use the <code>setData</code> function. Add this line <strong>inside your "success" function</strong>, right after the console.log(res.data) ....</li>
 <% code("javascript") do %>
-page.setData({ markers: res.data.stores })
+this.setData({ markers: res.data.stores })
 <% end %>
-<h3>Tips</h3>
+<h3>You should now see stores on the map!! 💪🎉 </h3>
+If not, check:
 <ul>
   <li>The markers provided in this API call will require your icon to be named <code>marker.png</code> and placed them inside an <code>/image</code> folder 😉</li>
-  <li>The markers provided will show up in Shanghai ;)</li>
+  <li>The markers provided will show up in Shanghai, so move the map there! ;)</li>
 </ul>
 </ol>
 </section>
