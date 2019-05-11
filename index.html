@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Use title if it's in the page YAML frontmatter -->
-  <title>Le Wagon WeChat development workshop</title>
+  <title>Le Wagon | WeChat Mini Program development workshop</title>
 
   <link href="stylesheets/all.css" rel="stylesheet" type="text/css" />
   <script src="javascripts/all.js" type="text/javascript"></script>
@@ -169,47 +169,43 @@
           <p>You can copy/paste the CSS code below in <code>index.wxss</code> and <strong>customize it</strong></p>
 
 <div class="highlight"><pre class="highlight css"><code>  <span class="nc">.banner</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
-  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
-  <span class="c">/* "vh" is a special unit to calculate the viewport height (screen size) */</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
-  <span class="c">/* "Flexbox" is a CSS positioning method to align all items, here in a column. Look it up! */</span>
-  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('https://www.ikea.com/ext/ikeagateway/statics/gw201904_tablet_portrait.jpg')</span><span class="p">;</span>
-  <span class="c">/* We're loading this image from your site!! */</span>
-  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span> <span class="m">-30px</span><span class="p">;</span>
-  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
-  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span> <span class="cp">!important</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span><span class="m">30px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+    <span class="c">/* "vh" is a special unit to calculate the viewport height (screen size) */</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+    <span class="c">/* "Flexbox" is a CSS positioning method to align all items, here in a column. Look it up! */</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('https://www.ikea.com/ext/ikeagateway/statics/gw201904_tablet_portrait.jpg')</span><span class="p">;</span>
+    <span class="c">/* We're loading this image from your site!! */</span>
+    <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span> <span class="m">-30px</span><span class="p">;</span>
+    <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+    <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">30px</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="nc">.headline</span> <span class="p">{</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span><span class="m">0px</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">0px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="nc">.action</span> <span class="p">{</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
-  <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+    <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div>  </section>
 
   <section class="readme-section">
     <h2 class="readme-header">4. Make it great! 🤘</h2>
-    <ul>
-      <li>It's only 1 page... you must make it perfect!</li>
-      <li>Want to <strong>add new pages</strong> in this app? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html">Read here</a> about the <code>app.json</code> file, used to globally configure your WeChat Mini Program. That's where you can add new pages.</li>
-      <li>Next, how about using your button to navigate to a subpage? <a href="https://developers.weixin.qq.com/miniprogram/en/dev/component/navigator.html">Look into this documentation</a> to add a component named <code>navigator</code></li>
-    </ul>
+    It's your landing page... you must make a perfect first impression!
   </section>
   <section>
     <h1 class="workshop text-center">Workshop #2</h1>
@@ -218,96 +214,136 @@
 
     <h2 class="readme-header drop">Let's build a store locator!</h2>
 
-    In this challenge, you will build the 2nd page of your Wechat program Store Locator, using advanced WXML capabilities and some built-in APIs.
+    <p> In this challenge, you will build the 2nd page of your Wechat program Store Locator, using advanced Wechat capabilities and <strong>API</strong>. </p>
 
-    <h3>1. Start with the view:</h3>
+    <p> <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html">Read here</a> about the <code>app.json</code> file, used to globally configure your WeChat Mini Program. That's where you can add new pages. </p>
+
+
+    <h3>1. Create Map Page</h3>
+    <strong>app.json:</strong> add a new page named "map" inside your "pages" list like so:
+
+<div class="highlight"><pre class="highlight javascript"><code>        <span class="s2">"pages"</span><span class="p">:[</span>
+          <span class="s2">"pages/index/index"</span><span class="p">,</span>
+          <span class="s2">"pages/map/map"</span>
+        <span class="p">],</span>
+</code></pre></div>
+    <h3>2. Link To Map Page</h3>
+
+
+    <p> Next, how about using your button to navigate to the map?</p>
+
+    <p> <strong>index.wxml:</strong> add a tapping interaction to your button called "map": </p>
+
+<div class="highlight"><pre class="highlight html"><code>        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"default"</span> <span class="na">bindtap=</span><span class="s">"map"</span><span class="nt">&gt;</span> Start today <span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
+    <strong>index.js:</strong> navigate to the map page in the "map" interaction that you will add to this file:
+
+<div class="highlight"><pre class="highlight javascript"><code>        <span class="nx">map</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">wx</span><span class="p">.</span><span class="nx">navigateTo</span><span class="p">({</span>
+            <span class="na">url</span><span class="p">:</span> <span class="s1">'/pages/map/map'</span>
+          <span class="p">})</span>
+        <span class="p">}</span>
+</code></pre></div>
+    <h3>3. Map</h3>
     <ul>
-      <li><strong>App.json file:</strong> inject a new page named "map" inside your "pages" array.</li>
-<div class="highlight"><pre class="highlight javascript"><code>      <span class="s2">"pages"</span><span class="p">:[</span>
-      <span class="s2">"pages/index/index"</span><span class="p">,</span>
-      <span class="s2">"pages/map/map"</span>
-      <span class="p">],</span>
-</code></pre></div>      <li><strong>WXML:</strong> Add following elements:
+      Tip: Top page listed in app.json "pages" list is the landing page that is shown first! You can put map page above the index page to see it when you save and make coding faster.
+
+      <li><strong>WXML:</strong> Add following in the <code>map.wxml</code> file:</li>
         <ol>
           <li>A title for your page... styled like an H2!</li>
           <li>A map component 👉 (<a href="http://open.wechat.com/cgi-bin/newreadtemplate?t=overseas_open/docs/mini-programs/development/component/map#component_map">check the attributes list here</a>) with static latitude/longitude data.</li>
         </ol>
       </li>
 
-<div class="highlight"><pre class="highlight html"><code>      <span class="nt">&lt;map</span> <span class="na">longitude=</span><span class="s">"121.47575499999994"</span> <span class="na">latitude=</span><span class="s">"31.232711"</span> <span class="na">scale=</span><span class="s">"10"</span> <span class="na">style=</span><span class="s">"width: 100%; height: 80vh;"</span><span class="nt">&gt;&lt;/map&gt;</span>
+<div class="highlight"><pre class="highlight html"><code>      <span class="nt">&lt;map</span> <span class="na">longitude=</span><span class="s">"121.47575499999994"</span> <span class="na">latitude=</span><span class="s">"31.232711"</span> <span class="na">scale=</span><span class="s">"10"</span><span class="nt">&gt;&lt;/map&gt;</span>
 </code></pre></div>
-      <li><strong>WXSS:</strong> Arrange the style of your map, either through inline CSS (style='') on the map component, or directly in the <code>map.wxss</code> file.</li>
-
+      <li><strong>WXSS:</strong> Style your map in the <code>map.wxss</code> file.</li>
+<div class="highlight"><pre class="highlight css"><code>      <span class="nt">map</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">80vh</span><span class="p">;</span>
+      <span class="p">}</span>
+</code></pre></div>
     </ul>
     <hr>
-    <h3>2. Continue with the JS logical layer:</h3>
-    <ul>
-      <li>Instead of static data, your map component should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustach syntax}}</a> to inject dynamic variables such as <em>{{longitude}}</em>, <em>{{lattitude}}</em>, <em></em>{{scale}}</em>, and of course <em>{{markers}}</em>!</li>
-      <li>Add now some raw data in your <code>data: {}</code> object (located <strong>at the top</strong> of your <code>map.js</code> file!)</li>
-      <li>Tip: use on <a href="https://www.latlong.net/convert-address-to-lat-long.html">online free service to calculate the GPS latitude/longitude</a> of any address.</li>
-
+    <h3>4. Continue with live data using code!</h3>
+    <ol>
+      <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to substitute live data such as <code>{{longitude}}</code>, <code>{{lattitude}}</code>, <code>{{scale}}</code>, and of course <code>{{markers}}</code>!</li>
+      <ul>
+        <li>Now add some live data to <code>data: {}</code> (located <strong>at the top</strong> of your <strong>map.js</strong> file!)</li>
+        <li>
+          Remember to match the label names of the mustache placeholders with that in the data: e.g. <code>{{ label1 }}</code> and <code>data: { label1: 134 }</code>
+        </li>
+      </ul>
+        <li>
+          Use <a href="https://www.latlong.net/convert-address-to-lat-long.html"> online free service to calculate the GPS latitude/longitude</a> for a real address.
+        </li>
 <div class="highlight"><pre class="highlight javascript"><code>      <span class="nx">data</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">latitude</span><span class="p">:</span> <span class="s2">"31.232711"</span><span class="p">,</span>
-      <span class="nx">longitude</span><span class="p">:</span> <span class="s2">"121.47575499999994"</span><span class="p">,</span>
-      <span class="nx">scale</span><span class="p">:</span> <span class="s1">'10'</span><span class="p">,</span>
-      <span class="nx">markers</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="p">}</span>
-</code></pre></div>    <li>Add your first marker to the empty array! Here's an array with 1 marker only:</li>
+        <span class="nl">latitude</span><span class="p">:</span> <span class="s2">"31.232711"</span><span class="p">,</span>
+        <span class="nx">longitude</span><span class="p">:</span> <span class="s2">"121.47575499999994"</span><span class="p">,</span>
+        <span class="nx">scale</span><span class="p">:</span> <span class="s1">'10'</span><span class="p">,</span>
+        <span class="nx">markers</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+</code></pre></div>    <li>Add your first marker to the "markers" list! Here's a list with 1 marker only:</li>
 
-<div class="highlight"><pre class="highlight javascript"><code>    <span class="nx">markers</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="na">iconPath</span><span class="p">:</span> <span class="s2">"/images/marker.png"</span><span class="p">,</span>
-    <span class="na">id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="na">latitude</span><span class="p">:</span> <span class="mf">31.232711</span><span class="p">,</span>
-    <span class="na">longitude</span><span class="p">:</span> <span class="mf">121.47575499999994</span><span class="p">,</span>
-    <span class="na">width</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-    <span class="na">height</span><span class="p">:</span> <span class="mi">50</span>
-  <span class="p">}]</span>
-</code></pre></div></li>
-<h3>Tips</h3>
+<div class="highlight"><pre class="highlight javascript"><code>      <span class="nx">markers</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">iconPath</span><span class="p">:</span> <span class="s2">"/images/marker.png"</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">latitude</span><span class="p">:</span> <span class="mf">31.232711</span><span class="p">,</span>
+        <span class="na">longitude</span><span class="p">:</span> <span class="mf">121.47575499999994</span><span class="p">,</span>
+        <span class="na">width</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="na">height</span><span class="p">:</span> <span class="mi">50</span>
+      <span class="p">}]</span>
+</code></pre></div>      </ol>
+</li>
+<h3>5. Make it pretty!</h3>
 <ul>
   <li>Make your own <a href="https://www.iconfont.cn/search/index?q=marker">marker icon</a>, add it to your project folder, and put the correct <code>iconPath</code></li>
-  <li>Use the <code>callout object</code> inside your marker object to create a tooltip. E.g:</li>
+  <li>Want a tooltip? Use the <code>callout</code> inside your marker:</li>
 
-<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">callout</span><span class="p">:</span> <span class="p">{</span> <span class="nl">content</span><span class="p">:</span> <span class="s2">"Shanghai Xuhui Store</span><span class="err">\</span><span class="s2">n No.126 Caoxi Road, Xuhui District, Shanghai"</span><span class="p">,</span> <span class="nx">fontSize</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nx">color</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span> <span class="nx">padding</span><span class="p">:</span> <span class="mi">10</span> <span class="p">}</span>
+<div class="highlight"><pre class="highlight javascript"><code>      <span class="nx">markers</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">iconPath</span><span class="p">:</span> <span class="s2">"/images/marker.png"</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">latitude</span><span class="p">:</span> <span class="mf">31.232711</span><span class="p">,</span>
+        <span class="na">longitude</span><span class="p">:</span> <span class="mf">121.47575499999994</span><span class="p">,</span>
+        <span class="na">width</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="na">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="na">callout</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">content</span><span class="p">:</span> <span class="s2">"Shanghai Xuhui Store</span><span class="err">\</span><span class="s2">n No.126 Caoxi Road, Xuhui District, Shanghai"</span><span class="p">,</span>
+          <span class="na">fontSize</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+          <span class="na">color</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
+          <span class="na">padding</span><span class="p">:</span> <span class="mi">10</span>
+        <span class="p">}</span>
+      <span class="p">}]</span>
 </code></pre></div>
 
 </ul>
-</ul>
+
 <hr>
-<h3>3. Last step: Let's fetch our data from an API call!</h3>
+<h3>6. Almost there! Let's fetch our data from the API!</h3>
 <ol>
   <li>Open this <a href="https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores">endpoint in your browser</a> to discover the data we prepared for you... 👉 Our objective is to GET these shop markers and load them dynamically in the WeChat mini program.</li>
-  <li>Locate the <strong>onLoad: function ()</strong> in your <code>map.js</code> file. Feel free to add some console.log('test') inside each part to test out the life cycle of your app...</li>
-  <li>Inside the body of this function, set a variable with your API endpoint.</li>
-<div class="highlight"><pre class="highlight javascript"><code>  <span class="kd">const</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="s1">'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores'</span>
-</code></pre></div>  <li>Next we will need a pointer to the current page, in the form of a variable. Here you go:</li>
-<div class="highlight"><pre class="highlight javascript"><code>  <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">this</span>
-</code></pre></div>
-  <li>Last, we can create a HTTPs request thanks to the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request API</a></li>
+  <li>Locate the <code>onLoad: function ()</code> in your <strong>map.js</strong> file. This code will run automatically when your page is loaded!</li>
+
+  <li>Inside the function, we can request data from APIs thanks to <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request</a></li>
 
 <div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">wx</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="nx">endpoint</span><span class="p">,</span>
-  <span class="na">header</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'content-type'</span><span class="p">:</span> <span class="s1">'application/json'</span> <span class="p">},</span>
-  <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success!'</span> <span class="o">+</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
-<span class="p">},</span>
-<span class="na">fail</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-
-<span class="p">},</span>
-<span class="na">complete</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-
-<span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div><li>You should see data in your console log now! Reload your app to see the results logged. If not, call for help 🙌</li>
-<li>Final step: Update the local data! The <code>setData</code> function is used to send data from the logical layer to the view layer, while changing the corresponding page data values. Add this line <strong>inside your success function</strong>, right after the console.log(res) ....</li>
-<div class="highlight"><pre class="highlight javascript"><code><span class="nx">page</span><span class="p">.</span><span class="nx">setData</span><span class="p">({</span> <span class="na">markers</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">stores</span> <span class="p">})</span>
-</code></pre></div><h3>Tips</h3>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores'</span><span class="p">,</span>
+    <span class="na">header</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'content-type'</span><span class="p">:</span> <span class="s1">'application/json'</span> <span class="p">},</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success!'</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+</code></pre></div><li>You should see data logged to your console now! Reload your app to see a list of stores. If not, call for help 🙌</li>
+<li>Final step: Use the API data! Use the <code>setData</code> function. Add this line <strong>inside your "success" function</strong>, right after the console.log(res.data) ....</li>
+<div class="highlight"><pre class="highlight javascript"><code><span class="k">this</span><span class="p">.</span><span class="nx">setData</span><span class="p">({</span> <span class="na">markers</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">stores</span> <span class="p">})</span>
+</code></pre></div></ol>
+<h3>You should now see stores on the map!! 💪🎉 </h3>
+If not, check:
 <ul>
   <li>The markers provided in this API call will require your icon to be named <code>marker.png</code> and placed them inside an <code>/images</code> folder 😉</li>
-  <li>The markers provided will show up in Shanghai ;)</li>
+  <li>The markers provided will show up in Shanghai, so move the map there! ;)</li>
 </ul>
-</ol>
 </section>
 
 <section class="readme-section">
