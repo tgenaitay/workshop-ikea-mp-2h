@@ -27,7 +27,7 @@ title: Le Wagon WeChat development workshop
         <p><strong>Afternoon</strong></p>
         <ul>
           <li>1:30PM: Workshop continues (60min)</li>
-          <li>2:30PM: <em class="lecture">Lecture #2:</em> Javascript 101 (60min)</li>
+          <li>2:30PM: <em class="lecture">Lecture #2:</em> API (60min)</li>
           <li>3:30PM: break</li>
           <li>3:45PM: <em class="workshop">Workshop #2:</em> Create IKEA’s store locator in WeChat (60min)</li>
           <li>5PM: Product development Q&A, wrap up</li>
@@ -266,16 +266,15 @@ title: Le Wagon WeChat development workshop
     <hr>
     <h3>Continue with live data using code!</h3>
     <ul>
-      <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to substitute live data such as <code>{{longitude}}</code>, <code>{{lattitude}}</code>, <code>{{scale}}</code>, and of course <code>{{markers}}</code>!</li>
+      <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to bring in live data with placeholders such as <code>"{{longitude}}"</code>, <code>"{{latitude}}"</code>, and <code>"{{scale}}"</code>. </li>
+      <li>Add a new placeholder called <code>"{{markers}}"</code> too! Where should it go? 🤔 </li>
       <li>Now add some live data to <code>data: {}</code> (located <strong>at the top</strong> of your <strong>map.js</strong> file!)</li>
     </ul>
     Tip:
       <ul>
         <li>
-          Remember to match the label names of the mustache placeholders with that in the data: e.g. <code>{{ label1 }}</code> and <code>data: { label1: 134 }</code>
-        </li>
-        <li>
-          Use <a href="https://www.latlong.net/convert-address-to-lat-long.html"> online free service to calculate the GPS latitude/longitude</a> for a real address.
+          Remember to match the label names of the mustache placeholders with that in the data:
+          e.g. <code>{{ label_name }}</code> and <code>data: { label_name: 134 }</code>
         </li>
       </ul>
       <% code("javascript") do %>
@@ -313,7 +312,7 @@ title: Le Wagon WeChat development workshop
         width: 50,
         height: 50,
         callout: {
-          content: "Shanghai Xuhui Store\n No.126 Caoxi Road, Xuhui District, Shanghai",
+          content: "Shanghai Xuhui Store",
           fontSize: 15,
           color: "#000000",
           padding: 10
@@ -321,6 +320,7 @@ title: Le Wagon WeChat development workshop
       }]
   <% end %>
 
+  Tip: If you can't see the tooltip when you click on the marker, try previewing with your phone instead. The teacher can show you.
 
 </ul>
 
@@ -333,6 +333,8 @@ title: Le Wagon WeChat development workshop
   <li>Inside the function, we can request data from APIs thanks to <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request</a></li>
 
   <% code("javascript") do %>
+  let page = this
+
   wx.request({
     url: 'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores',
     header: { 'content-type': 'application/json' },
@@ -345,7 +347,11 @@ title: Le Wagon WeChat development workshop
 <li>You should see data logged to your console now! Reload your app to see a list of stores. If not, call for help 🙌</li>
 <li>Final step: Use the API data! Use the <code>setData</code> function. Add this line <strong>inside your "success" function</strong>, right after the console.log(res.data) ....</li>
 <% code("javascript") do %>
-this.setData({ markers: res.data.stores })
+    success: function (res) {
+      console.log('success!');
+      console.log(res.data)
+      page.setData({ markers: res.data.stores })
+    }
 <% end %>
 <h3>You should now see stores on the map!! 💪🎉 </h3>
 If not, check:
