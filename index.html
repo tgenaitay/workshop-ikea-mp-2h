@@ -50,7 +50,7 @@
         <p><strong>Afternoon</strong></p>
         <ul>
           <li>1:30PM: Workshop continues (60min)</li>
-          <li>2:30PM: <em class="lecture">Lecture #2:</em> Javascript 101 (60min)</li>
+          <li>2:30PM: <em class="lecture">Lecture #2:</em> API (60min)</li>
           <li>3:30PM: break</li>
           <li>3:45PM: <em class="workshop">Workshop #2:</em> Create IKEA’s store locator in WeChat (60min)</li>
           <li>5PM: WeChat product development Q&A with Fran Yang</li>
@@ -267,16 +267,17 @@
     <hr>
     <h3>4. Continue with live data using code!</h3>
     <ol>
-      <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to substitute live data such as <code>{{longitude}}</code>, <code>{{lattitude}}</code>, <code>{{scale}}</code>, and of course <code>{{markers}}</code>!</li>
+      <li>Instead of static data, your map in <strong>map.wxml</strong> should now use the <a href="https://developers.weixin.qq.com/miniprogram/en/dev/quickstart/basic/file.html#js-interactive-logic">{{mustache syntax}}</a> to bring in live data with placeholders such as <code>"{{longitude}}"</code>, <code>"{{latitude}}"</code>, and <code>"{{scale}}"</code>. </li>
       <ul>
+        <li>Add a new placeholder called <code>"{{markers}}"</code> too! Where should it go? 🤔 </li>
         <li>Now add some live data to <code>data: {}</code> (located <strong>at the top</strong> of your <strong>map.js</strong> file!)</li>
         <li>
-          Remember to match the label names of the mustache placeholders with that in the data: e.g. <code>{{ label1 }}</code> and <code>data: { label1: 134 }</code>
+          Tip:
+          Remember to match the label names of the mustache placeholders with that in the data:
+          e.g. <code>{{ label_name }}</code> and <code>data: { label_name: 134 }</code>
         </li>
       </ul>
-        <li>
-          Use <a href="https://www.latlong.net/convert-address-to-lat-long.html"> online free service to calculate the GPS latitude/longitude</a> for a real address.
-        </li>
+
 <div class="highlight"><pre class="highlight javascript"><code>      <span class="nx">data</span><span class="p">:</span> <span class="p">{</span>
         <span class="nl">latitude</span><span class="p">:</span> <span class="s2">"31.232711"</span><span class="p">,</span>
         <span class="nx">longitude</span><span class="p">:</span> <span class="s2">"121.47575499999994"</span><span class="p">,</span>
@@ -308,13 +309,14 @@
         <span class="na">width</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
         <span class="na">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
         <span class="na">callout</span><span class="p">:</span> <span class="p">{</span>
-          <span class="na">content</span><span class="p">:</span> <span class="s2">"Shanghai Xuhui Store</span><span class="err">\</span><span class="s2">n No.126 Caoxi Road, Xuhui District, Shanghai"</span><span class="p">,</span>
+          <span class="na">content</span><span class="p">:</span> <span class="s2">"Shanghai Xuhui Store"</span><span class="p">,</span>
           <span class="na">fontSize</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
           <span class="na">color</span><span class="p">:</span> <span class="s2">"#000000"</span><span class="p">,</span>
           <span class="na">padding</span><span class="p">:</span> <span class="mi">10</span>
         <span class="p">}</span>
       <span class="p">}]</span>
 </code></pre></div>
+  Tip: If you can't see the tooltip when you click on the marker, try previewing with your phone instead. The teacher can show you.
 
 </ul>
 
@@ -326,7 +328,9 @@
 
   <li>Inside the function, we can request data from APIs thanks to <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/network-request.html">wx.request</a></li>
 
-<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">wx</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+<div class="highlight"><pre class="highlight javascript"><code>  <span class="kd">let</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">this</span>
+
+  <span class="nx">wx</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://easy-mock.com/mock/5ca59a237296342b5e1e2c1d/ikea/stores'</span><span class="p">,</span>
     <span class="na">header</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'content-type'</span><span class="p">:</span> <span class="s1">'application/json'</span> <span class="p">},</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
@@ -336,7 +340,11 @@
   <span class="p">})</span>
 </code></pre></div><li>You should see data logged to your console now! Reload your app to see a list of stores. If not, call for help 🙌</li>
 <li>Final step: Use the API data! Use the <code>setData</code> function. Add this line <strong>inside your "success" function</strong>, right after the console.log(res.data) ....</li>
-<div class="highlight"><pre class="highlight javascript"><code><span class="k">this</span><span class="p">.</span><span class="nx">setData</span><span class="p">({</span> <span class="na">markers</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">stores</span> <span class="p">})</span>
+<div class="highlight"><pre class="highlight javascript"><code>    <span class="nx">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success!'</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+      <span class="nx">page</span><span class="p">.</span><span class="nx">setData</span><span class="p">({</span> <span class="na">markers</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">stores</span> <span class="p">})</span>
+    <span class="p">}</span>
 </code></pre></div></ol>
 <h3>You should now see stores on the map!! 💪🎉 </h3>
 If not, check:
