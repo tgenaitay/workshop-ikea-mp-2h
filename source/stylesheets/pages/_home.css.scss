@@ -51,10 +51,16 @@
   h3.readme-header {
     font-size: 25px;
   }
+  ul {
+    margin-bottom:30px;
+  }
   li {
     font-size: 18px;
     line-height: 30px;
     margin: 5px 0;
+  }
+  hr {
+    margin-bottom:15px;
   }
   .readme-header.drop {
     cursor: pointer;
@@ -64,9 +70,15 @@
 .lecture {
   background-color: #E8FAFE;
   color: #62DDF5;
+  box-shadow: 0 15px 35px rgba(126, 87, 88, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  margin: 50px 0;
+  border-radius: 3px;
 }
 
 .workshop {
   background-color: #E4FFF3;
   color: #1EDD88;
+  box-shadow: 0 15px 35px rgba(126, 87, 88, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  margin: 50px 0;
+  border-radius: 3px;
 }
